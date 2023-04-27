@@ -37,7 +37,7 @@ function App() {
   }, []);
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -49,7 +49,6 @@ function App() {
         <Route path="/resorts" element={<Resorts />} />
         <Route path="/tours" element={<Tours />} />
         <Route path="/add-:categoryId" element={<AddPoint />} />
-
       </Routes>
       <MainChat />
     </div>
