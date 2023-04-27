@@ -4,11 +4,15 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { removeItem } from "../helpers/helpersStorage";
 import { logutUser } from "../slice/auth";
 import ModalCategory from "./ModalCategory";
+import { homeCategories } from "../service/homeCategory";
+import { IoMdClose } from "react-icons/io";
 
 const Navbar = () => {
   const { isLoggedIn } = useSelector((state) => state.auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user)
+  console.log(user);
   const [toggleBtn, setToggleBtn] = useState(false);
 
   const logoutUser = () => {
@@ -30,6 +34,7 @@ const Navbar = () => {
                 />
               </Link>
               <div className="flex gap-4 items-center text-center">
+
                 <NavLink
                   onClick={() => setToggleBtn((prev) => !prev)}
                   className="text-[14px] outline-none font-bold px-[15px] py-[5px] rounded-[6px] bg-backBtn hover:bg-[#ff9668] text-[#ffeacb]">
@@ -71,18 +76,35 @@ const Navbar = () => {
       </div>
       {toggleBtn && (
         <>
-          <div className="fixed z-[99] w-full h-full backdrop-blur-md ">
-            <div className="fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2">
-              <div className="w-[440px] h-[50vh] border">
-                <span onClick={() => setToggleBtn((prev) => !prev)}>X</span>
-                <h1>What do yo want to add?</h1>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Obcaecati quaerat alias itaque accusantium cumque tenetur sunt
-                  iste? Est alias perferendis odit veniam ipsum, illo id, in
-                  fuga consectetur, sequi saepe amet tempora porro voluptate
-                  sapiente commodi minus dolorum consequatur iur{" "}
-                </p>
+          <div className="fixed z-[99999] w-full h-[100vh] backdrop-blur-md ">
+            <div className="fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 shadow-[0_0_25px_15px_#888888] rounded-[10px]" >
+              <div className="bg-lightWhite rounded-lg px-[25px]">
+                <div className="flex justify-end pt-4">
+                  <IoMdClose
+                    size={30}
+                    onClick={() => setToggleBtn((prev) => !prev)}
+                    className="cursor-pointer"
+                  />
+                </div>
+                <h1 className="mb-8 text-[20px] text-lightGrey">
+                  What do yo want to add?
+                </h1>
+                <div className="h-[50vh] grid justify-items-center gap-4 grid-cols-2">
+                  {homeCategories.map((category) => (
+                    <Link
+                      className={`${category.bg} cursor-pointer hover:scale-110 ease-in duration-300 w-[186px] h-[100px] flex justify-center items-center rounded-lg`}
+                      key={category.id}>
+                      <div className="flex flex-col items-center">
+                        <img
+                          src={category.icon}
+                          alt="img"
+                          className="w-[50px] h-[50px]"
+                        />
+                        <h6 className="text-lightWhite">{category.nameUz}</h6>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               </div>
               <div className="grid grid-cols-2"></div>
             </div>
