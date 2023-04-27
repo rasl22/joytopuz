@@ -13,6 +13,7 @@ import Apartments from "./category/Apartments";
 import Hotels from "./category/Hotels";
 import Resorts from "./category/Resorts";
 import Tours from "./category/Tours";
+import AddPoint from "./pages/AddPoint";
 
 function App() {
   const dispatch = useDispatch();
@@ -43,10 +44,12 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/villas" element={<Dachas />} />
-        <Route path="/home" element={<Apartments />} />
+        <Route path="/apartment" element={<Apartments />} />
         <Route path="/hotels" element={<Hotels />} />
         <Route path="/resorts" element={<Resorts />} />
         <Route path="/tours" element={<Tours />} />
+        <Route path="/add-:categoryId" element={<AddPoint />} />
+
       </Routes>
       <MainChat />
     </div>

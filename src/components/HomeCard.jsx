@@ -22,7 +22,7 @@ const HomeCard = () => {
           <h1 className="text-[#fff] w-full z-20 text-[30px] font-normal text-center absolute top-[80%]">
             {category.nameUz}
           </h1>
-          <div className="absolute w-[90px] top-[30%] left-[36%] z-50">
+          <div className="absolute w-[90px] top-[30%] left-[36%] z-30">
             <img src={category.icon} alt="img" />
           </div>
         </Link>
