@@ -8,11 +8,9 @@ import { homeCategories } from "../service/homeCategory";
 import { IoMdClose } from "react-icons/io";
 
 const Navbar = () => {
-  const { isLoggedIn } = useSelector((state) => state.auth);
+  const { isLoggedIn, user } = useSelector((state) => state.auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user)
-  console.log(user);
   const [toggleBtn, setToggleBtn] = useState(false);
 
   const logoutUser = () => {
@@ -34,7 +32,11 @@ const Navbar = () => {
                 />
               </Link>
               <div className="flex gap-4 items-center text-center">
-
+                <span className="relative tracking-[1px]">
+                  {/* <h6 className="after:content-['']  bg-primary h-[2px] w-full">
+                    Name
+                  </h6> */}
+                </span>
                 <NavLink
                   onClick={() => setToggleBtn((prev) => !prev)}
                   className="text-[14px] outline-none font-bold px-[15px] py-[5px] rounded-[6px] bg-backBtn hover:bg-[#ff9668] text-[#ffeacb]">
@@ -77,7 +79,7 @@ const Navbar = () => {
       {toggleBtn && (
         <>
           <div className="fixed z-[99999] w-full h-[100vh] backdrop-blur-md ">
-            <div className="fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 shadow-[0_0_25px_15px_#888888] rounded-[10px]" >
+            <div className="fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 shadow-[0_0_25px_15px_#888888] rounded-[10px]">
               <div className="bg-lightWhite rounded-lg px-[25px]">
                 <div className="flex justify-end pt-4">
                   <IoMdClose

@@ -16,9 +16,8 @@ const HomeCard = () => {
               className="w-full h-full xs:w-[540px] xs:h-[210px] sm:w-full sm:h-[210px]  md:w-[358px] md:h-[320px] rounded-[10px] absolute object-cover "
             />
           </div>
-          {console.log(category.bg)}
           <div
-            className={`bg-[#${category.bg}] bg-opacity-60 rounded-[10px] w-full h-full z-10 absolute top-0`}></div>
+            className={`${category.bg} bg-opacity-60 rounded-[10px] w-full h-full z-10 absolute top-0`}></div>
           <h1 className="text-[#fff] w-full z-20 text-[30px] font-normal text-center absolute top-[80%]">
             {category.nameUz}
           </h1>
