@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { TbBrandWechat } from "react-icons/tb";
 import ChatForm from "./ChatForm";
+import { IoMdClose } from "react-icons/io";
 
 const MainChat = () => {
   const [toggleChat, setToggleChat] = useState(false);
@@ -14,7 +15,17 @@ const MainChat = () => {
           <TbBrandWechat size={40} color="#fff" />
         </div>
       </div>
-      <div>{toggleChat && <ChatForm />}</div>
+      {toggleChat && <ChatForm />}
+      {toggleChat && (
+        <div className="fixed right-[23%] bottom-[46%] border-[2px] border-primary bg-lightWhite w-10 h-10 rounded-[50%] flex items-center justify-center z-[100] hover:bg-darkerWhite">
+          <IoMdClose
+            size={30}
+            color="grey"
+            onClick={() => setToggleChat((prev) => !prev)}
+            className="cursor-pointer"
+          />
+        </div>
+      )}
     </>
   );
 };

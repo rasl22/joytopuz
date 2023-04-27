@@ -78,7 +78,7 @@ const Navbar = () => {
       </div>
       {toggleBtn && (
         <div className="fixed z-[99999] w-full h-[100%] backdrop-blur-md">
-          <div className="fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 shadow-[0_0_25px_15px_#888888] rounded-[10px] ">
+          <div className="fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 shadow-[-5px_0_50px_5px_#ff7e47] rounded-[10px]">
             <div className="bg-lightWhite rounded-lg px-[25px] h-[478px]">
               <div className="flex justify-end pt-4 ">
                 <IoMdClose
@@ -91,7 +91,7 @@ const Navbar = () => {
               <h1 className="mb-8 text-[20px] text-lightGrey">
                 What do yo want to add?
               </h1>
-              <div className="h-[50vh] grid justify-items-center gap-4 grid-cols-2">
+              <div className="grid justify-items-center gap-4 grid-cols-2">
                 {homeCategories.map((category) => (
                   <Link
                     className={`${category.bg} cursor-pointer hover:scale-110 ease-in duration-300 w-[186px] h-[100px] flex justify-center items-center rounded-lg`}
@@ -100,7 +100,7 @@ const Navbar = () => {
                       <img
                         src={category.icon}
                         alt="img"
-                        className="w-[50px] h-[50px]"
+                        className="w-[50px] h-full"
                       />
                       <h6 className="text-lightWhite">{category.nameUz}</h6>
                     </div>
@@ -108,7 +108,6 @@ const Navbar = () => {
                 ))}
               </div>
             </div>
-            <div className="grid grid-cols-2"></div>
           </div>
         </div>
       )}
