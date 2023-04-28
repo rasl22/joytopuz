@@ -1,8 +1,11 @@
 import React from 'react'
+import SkeletonCategory from '../components/SkeletonCategory'
 
 const Apartments = () => {
   return (
-    <div>Apartments</div>
+    <div className='container'>
+      <SkeletonCategory />
+    </div>
   )
 }
 

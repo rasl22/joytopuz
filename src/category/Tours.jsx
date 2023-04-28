@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import SkeletonCategory from "../components/SkeletonCategory";
 
 const Tours = () => {
   return (
-    <div>Tours</div>
-  )
-}
+    <div className="container">
+      <SkeletonCategory />
+    </div>
+  );
+};
 
-export default Tours
+export default Tours;

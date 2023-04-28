@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import SkeletonCategory from "../components/SkeletonCategory";
 
 const Hotels = () => {
   return (
-    <div className='pt-[135px]'>Hotels</div>
-  )
-}
+    <div className="container">
+      <SkeletonCategory />
+    </div>
+  );
+};
 
-export default Hotels
+export default Hotels;

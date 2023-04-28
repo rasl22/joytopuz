@@ -1,10 +1,9 @@
-import React from "react";
-import Dacha from "../components/Dacha";
+import SkeletonCategory from "../components/SkeletonCategory";
 
 const Dachas = () => {
   return (
     <div className="container">
-      <Dacha />
+      <SkeletonCategory />
     </div>
   );
 };

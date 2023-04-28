@@ -8,11 +8,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { signUserSuccess } from "./slice/auth";
 import MainChat from "./components/MainChat";
 import Profile from "./pages/Profile";
-import Dachas from "./category/Dachas";
-import Apartments from "./category/Apartments";
-import Hotels from "./category/Hotels";
-import Resorts from "./category/Resorts";
-import Tours from "./category/Tours";
+import {
+  Dachas,
+  Apartments,
+  Extreams,
+  Hotels,
+  Resorts,
+  Tours,
+} from "./category";
 import AddPoint from "./pages/AddPoint";
 
 function App() {
@@ -32,7 +35,6 @@ function App() {
   useEffect(() => {
     if (userData !== null && userData !== undefined) {
       getUser();
-      // getArticles();
     }
   }, []);
   return (
@@ -48,6 +50,7 @@ function App() {
         <Route path="/hotels" element={<Hotels />} />
         <Route path="/resorts" element={<Resorts />} />
         <Route path="/tours" element={<Tours />} />
+        <Route path="/extreme" element={<Extreams />} />
         <Route path="/add-:categoryId" element={<AddPoint />} />
       </Routes>
       <MainChat />

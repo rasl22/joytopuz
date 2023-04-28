@@ -1,8 +1,10 @@
 import { homeCategories } from "../service/homeCategory";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const HomeCard = () => {
+  const { slug } = useParams();
   return (
+
     <>
       {homeCategories.map((category) => (
         <Link

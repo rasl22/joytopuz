@@ -1,8 +1,11 @@
 import React from 'react'
+import SkeletonCategory from '../components/SkeletonCategory'
 
 const Extreams = () => {
   return (
-    <div>Extreams</div>
+    <div className='container'>
+      <SkeletonCategory />
+    </div>
   )
 }
 
