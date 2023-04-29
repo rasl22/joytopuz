@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate, useParams } from "react-router-dom";
 import { removeItem } from "../helpers/helpersStorage";
 import { logutUser } from "../slice/auth";
 import { homeCategories } from "../service/homeCategory";
@@ -13,6 +13,11 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const [toggleBtn, setToggleBtn] = useState(false);
   const response = JSON.parse(getItem("user"));
+
+  const handleAddPoint = (id) => {
+    !isLoggedIn ? navigate(`/add/${id}`) : navigate(`/login`);
+    setToggleBtn((prev) => !prev);
+  };
 
   const logoutUser = () => {
     dispatch(logutUser());
@@ -93,9 +98,11 @@ const Navbar = () => {
               </h1>
               <div className="grid justify-items-center gap-4 grid-cols-2">
                 {homeCategories.map((category) => (
-                  <Link
+                  <button
                     className={`${category.bg} cursor-pointer hover:scale-110 ease-in duration-300 w-[186px] h-[100px] flex justify-center items-center rounded-lg`}
-                    key={category.id}>
+                    key={category.id}
+                    onClick={() => handleAddPoint(category.id)}
+                    type="button">
                     <div className="flex flex-col items-center">
                       <img
                         src={category.icon}
@@ -104,7 +111,7 @@ const Navbar = () => {
                       />
                       <h6 className="text-lightWhite">{category.nameUz}</h6>
                     </div>
-                  </Link>
+                  </button>
                 ))}
               </div>
             </div>

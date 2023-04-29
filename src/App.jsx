@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useParams } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -51,7 +51,7 @@ function App() {
         <Route path="/resorts" element={<Resorts />} />
         <Route path="/tours" element={<Tours />} />
         <Route path="/extreme" element={<Extreams />} />
-        <Route path="/add-:categoryId" element={<AddPoint />} />
+        <Route path="/add/:categoryId" element={<AddPoint />} />
       </Routes>
       <MainChat />
     </div>
