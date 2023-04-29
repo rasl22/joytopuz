@@ -3,6 +3,7 @@ import { homeCategories } from "../service/homeCategory";
 import { Select } from "../ui";
 import { useState } from "react";
 import { MdLocationPin } from "react-icons/md";
+import { FcAddImage } from "react-icons/fc";
 
 const AddPoint = () => {
   const { categoryId } = useParams();
@@ -27,31 +28,28 @@ const AddPoint = () => {
         <div className="pt-5 grid grid-cols-2 gap-x-8">
           <div className="flex items-center justify-center">
             <label
-              for="dropzone-file"
-              className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-              <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                <svg
-                  ariaHidden="true"
-                  className="w-10 h-10 mb-3 text-gray-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
-                </svg>
-                <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                  <span className="font-semibold">Click to upload</span> or drag
-                  and drop
+              for="upload-file"
+              className="h-[303px] px-3 py-2 w-full border border-dashed rounded-md hover:border-secondary hover:bg-secondGrey border-secondGrey cursor-pointer flex flex-wrap ">
+              <div className="flex-[33%] flex-col self-center text-center">
+                <FcAddImage size={160} />
+                <button
+                  type="button"
+                  className="py-[5px] px-[10px] bg-primary text-lightPrimary text-[14px] rounded-md mt-4">
+                  Upload photo
+                </button>
+              </div>
+              <div className="flex-[66%] flex flex-col justify-center text-center">
+                <p className="text-[12px]">
+                  The number of photos should be more than 5
                 </p>
-                <p className="text-xs text-gray-500 dark:text-gray-400">
-                  SVG, PNG, JPG or GIF (MAX. 800x400px)
+                <p className="text-[12px] my-2">
+                  The resolution of each photo should be at least 1080x762 px
+                </p>
+                <p className="text-[12px]">
+                  Each photo should be less than 3Mb
                 </p>
               </div>
-              <input id="dropzone-file" type="file" className="hidden" />
+              <input id="upload-file" type="file" className="hidden" />
             </label>
           </div>
           <div>
@@ -121,9 +119,9 @@ const AddPoint = () => {
             </button>
           </div>
           <div>
-            <h1 className="">Add video</h1>
+            <h1 className="mt-4 mb-1 text-lightGrey">Add video</h1>
             <div className="rounded-md border border-secondGrey text-lightBlack  h-11 flex">
-              <span className="bg-secondGrey flex items-center text-[14px] px-[8px] py-[12px] w-[16%]">
+              <span className="bg-secondGrey flex items-center text-[14px] px-[8px] py-[12px] w-[20%]">
                 Video link
               </span>
               <input
@@ -179,24 +177,24 @@ const AddPoint = () => {
                 <h1 className="text-lightGrey">Smoking availible</h1>
                 <input
                   type="radio"
-                  id="yes"
-                  name="yes"
+                  id="smoking"
+                  name="smoking"
                   value="true"
                   className="mr-1 "
                 />
                  
-                <label for="javascript" className="text-lightGrey">
+                <label for="smoking" className="text-lightGrey">
                   Yes
                 </label>
                 <input
                   type="radio"
-                  id="no"
-                  name="no"
+                  id="smoking"
+                  name="smoking"
                   value="false"
                   className="ml-4 mr-1"
                 />
                  
-                <label for="no" className="text-lightGrey">
+                <label for="smoking" className="text-lightGrey">
                   No
                 </label>
               </div>
@@ -204,24 +202,24 @@ const AddPoint = () => {
                 <h1 className="text-lightGrey">Alcohol availible</h1>
                 <input
                   type="radio"
-                  id="yes"
-                  name="yes"
+                  id="alcohol"
+                  name="alcahol"
                   value="true"
                   className="mr-1 mt-2 "
                 />
                  
-                <label for="javascript" className="text-lightGrey">
+                <label for="alcahol" className="text-lightGrey">
                   Yes
                 </label>
                 <input
                   type="radio"
-                  id="no"
-                  name="no"
+                  id="alcahol"
+                  name="alcahol"
                   value="false"
                   className="ml-4 mr-1 mt-2"
                 />
                  
-                <label for="no" className="text-lightGrey">
+                <label for="alcahol" className="text-lightGrey">
                   No
                 </label>
               </div>
@@ -229,24 +227,24 @@ const AddPoint = () => {
                 <h1 className="text-lightGrey">Pet availible</h1>
                 <input
                   type="radio"
-                  id="yes"
-                  name="yes"
+                  id="pet"
+                  name="pet"
                   value="true"
                   className="mr-1 mt-2"
                 />
                  
-                <label for="javascript" className="text-lightGrey">
+                <label for="pet" className="text-lightGrey">
                   Yes
                 </label>
                 <input
                   type="radio"
-                  id="no"
-                  name="no"
+                  id="pet"
+                  name="pet"
                   value="false"
                   className="ml-4 mr-1"
                 />
                  
-                <label for="no" className="text-lightGrey">
+                <label for="pet" className="text-lightGrey">
                   No
                 </label>
               </div>
@@ -254,24 +252,24 @@ const AddPoint = () => {
                 <h1 className="text-lightGrey">Availible only family</h1>
                 <input
                   type="radio"
-                  id="yes"
-                  name="yes"
+                  id="family"
+                  name="family"
                   value="true"
                   className="mr-1 mt-2"
                 />
                  
-                <label for="javascript" className="text-lightGrey">
+                <label for="family" className="text-lightGrey">
                   Yes
                 </label>
                 <input
                   type="radio"
-                  id="no"
-                  name="no"
+                  id="family"
+                  name="family"
                   value="false"
                   className="ml-4 mr-1"
                 />
                  
-                <label for="no" className="text-lightGrey">
+                <label for="family" className="text-lightGrey">
                   No
                 </label>
               </div>
@@ -279,24 +277,24 @@ const AddPoint = () => {
                 <h1 className="text-lightGrey">Loudy music availible</h1>
                 <input
                   type="radio"
-                  id="yes"
-                  name="yes"
+                  id="music"
+                  name="music"
                   value="true"
                   className="mr-1 mt-2"
                 />
                  
-                <label for="javascript" className="text-lightGrey">
+                <label for="music" className="text-lightGrey">
                   Yes
                 </label>
                 <input
                   type="radio"
-                  id="no"
-                  name="no"
+                  id="music"
+                  name="music"
                   value="false"
                   className="ml-4 mr-1"
                 />
                  
-                <label for="no" className="text-lightGrey">
+                <label for="music" className="text-lightGrey">
                   No
                 </label>
               </div>
@@ -304,24 +302,24 @@ const AddPoint = () => {
                 <h1 className="text-lightGrey">Party availible</h1>
                 <input
                   type="radio"
-                  id="yes"
-                  name="yes"
+                  id="party"
+                  name="party"
                   value="true"
                   className="mr-1 mt-2"
                 />
                  
-                <label for="javascript" className="text-lightGrey">
+                <label for="party" className="text-lightGrey">
                   Yes
                 </label>
                 <input
                   type="radio"
-                  id="no"
-                  name="no"
+                  id="party"
+                  name="party"
                   value="false"
                   className="ml-4 mr-1"
                 />
                  
-                <label for="no" className="text-lightGrey">
+                <label for="party" className="text-lightGrey">
                   No
                 </label>
               </div>
