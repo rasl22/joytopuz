@@ -25,7 +25,7 @@ const AddPoint = () => {
         Post an ad: {newObj.nameUz}
       </h1>
       <div>
-        <div className="pt-5 grid grid-cols-2 gap-x-8">
+        <div className="pt-12 grid grid-cols-2 gap-x-8">
           <div className="flex items-center justify-center">
             <label
               for="upload-file"
@@ -78,7 +78,7 @@ const AddPoint = () => {
                 </div>
               </div>
             </div>
-            <h1 className="text-2xl text-lightBlack mt-4">Price</h1>
+            <h1 className="text-2xl text-lightBlack mt-4">Address</h1>
             <div className="grid grid-cols-2 gap-x-8 pt-2">
               <div>
                 <p className="text-lightGrey text-4">Region</p>
@@ -120,14 +120,14 @@ const AddPoint = () => {
           </div>
           <div>
             <h1 className="mt-4 mb-1 text-lightGrey">Add video</h1>
-            <div className="rounded-md border border-secondGrey text-lightBlack  h-11 flex">
-              <span className="bg-secondGrey flex items-center text-[14px] px-[8px] py-[12px] w-[20%]">
+            <div className="rounded-md border border-secondGrey text-lightBlack  h-11 flex hover:border-primary">
+              <span className="bg-secondGrey rounded-l-md flex items-center text-[14px] px-[8px] py-[12px] w-[20%]">
                 Video link
               </span>
               <input
                 type="text"
                 placeholder="youtube.com"
-                className="pl-2 border-none w-full outline-none rounded-r-md"
+                className="pl-2 border-none w-full outline-none rounded-r-md "
               />
             </div>
           </div>
@@ -180,10 +180,10 @@ const AddPoint = () => {
                   id="smoking"
                   name="smoking"
                   value="true"
-                  className="mr-1 "
+                  className="mr-1 hover:cursor-pointer"
                 />
                  
-                <label for="smoking" className="text-lightGrey">
+                <label for="smoking" className="text-lightGrey ">
                   Yes
                 </label>
                 <input
@@ -191,7 +191,7 @@ const AddPoint = () => {
                   id="smoking"
                   name="smoking"
                   value="false"
-                  className="ml-4 mr-1"
+                  className="ml-4 mr-1 hover:cursor-pointer"
                 />
                  
                 <label for="smoking" className="text-lightGrey">
@@ -205,7 +205,7 @@ const AddPoint = () => {
                   id="alcohol"
                   name="alcahol"
                   value="true"
-                  className="mr-1 mt-2 "
+                  className="mr-1 mt-2 hover:cursor-pointer"
                 />
                  
                 <label for="alcahol" className="text-lightGrey">
@@ -216,7 +216,7 @@ const AddPoint = () => {
                   id="alcahol"
                   name="alcahol"
                   value="false"
-                  className="ml-4 mr-1 mt-2"
+                  className="ml-4 mr-1 mt-2 hover:cursor-pointer"
                 />
                  
                 <label for="alcahol" className="text-lightGrey">
@@ -230,7 +230,7 @@ const AddPoint = () => {
                   id="pet"
                   name="pet"
                   value="true"
-                  className="mr-1 mt-2"
+                  className="mr-1 mt-2 hover:cursor-pointer"
                 />
                  
                 <label for="pet" className="text-lightGrey">
@@ -241,7 +241,7 @@ const AddPoint = () => {
                   id="pet"
                   name="pet"
                   value="false"
-                  className="ml-4 mr-1"
+                  className="ml-4 mr-1 hover:cursor-pointer"
                 />
                  
                 <label for="pet" className="text-lightGrey">
@@ -255,7 +255,7 @@ const AddPoint = () => {
                   id="family"
                   name="family"
                   value="true"
-                  className="mr-1 mt-2"
+                  className="mr-1 mt-2 hover:cursor-pointer"
                 />
                  
                 <label for="family" className="text-lightGrey">
@@ -266,7 +266,7 @@ const AddPoint = () => {
                   id="family"
                   name="family"
                   value="false"
-                  className="ml-4 mr-1"
+                  className="ml-4 mr-1 hover:cursor-pointer"
                 />
                  
                 <label for="family" className="text-lightGrey">
@@ -280,7 +280,7 @@ const AddPoint = () => {
                   id="music"
                   name="music"
                   value="true"
-                  className="mr-1 mt-2"
+                  className="mr-1 mt-2 hover:cursor-pointer"
                 />
                  
                 <label for="music" className="text-lightGrey">
@@ -291,7 +291,7 @@ const AddPoint = () => {
                   id="music"
                   name="music"
                   value="false"
-                  className="ml-4 mr-1"
+                  className="ml-4 mr-1 hover:cursor-pointer"
                 />
                  
                 <label for="music" className="text-lightGrey">
@@ -305,7 +305,7 @@ const AddPoint = () => {
                   id="party"
                   name="party"
                   value="true"
-                  className="mr-1 mt-2"
+                  className="mr-1 mt-2 hover:cursor-pointer"
                 />
                  
                 <label for="party" className="text-lightGrey">
@@ -316,12 +316,53 @@ const AddPoint = () => {
                   id="party"
                   name="party"
                   value="false"
-                  className="ml-4 mr-1"
+                  className="ml-4 mr-1 hover:cursor-pointer"
                 />
                  
                 <label for="party" className="text-lightGrey">
                   No
                 </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h1 className="text-2xl text-lightBlack font-semibold">
+            Contact information
+          </h1>
+          <div className=" gap-x-8 pt-2">
+            <div className="mb-8">
+              <p className="text-lightGrey text-4 mb-1">
+                Enter your phone number
+              </p>
+              <div className="rounded-md border border-secondGrey text-lightBlack w-1/6 h-11 flex hover:border-primary">
+                <span className="bg-secondGrey rounded-l-md flex items-center text-[14px] px-1 w-[10%]">
+                  +
+                </span>
+                <input
+                  type="text"
+                  placeholder="998 123456789"
+                  className="pl-2 border-none w-full outline-none rounded-r-md"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h1 className="text-2xl text-lightBlack font-semibold">
+            Additional information
+          </h1>
+          <div className=" gap-x-8 pt-2">
+            <div className="mb-8">
+              <p className="text-lightGrey text-4 mb-1">
+                Enter additional information (optional)
+              </p>
+              <div>
+                <textarea
+                  id="message"
+                  rows="4"
+                  className="block p-2.5 w-1/2 text-lightGrey  bg-gray-50 rounded-lg border border-secondGrey text-sm focus:border-primary outline-none hover:border-primary"
+                  placeholder="Write your thoughts here..."></textarea>
               </div>
             </div>
           </div>
