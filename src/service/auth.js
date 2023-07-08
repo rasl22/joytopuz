@@ -1,4 +1,3 @@
-// import { Axios } from "axios";/
 import axios from "./api";
 
 const AuthService = {
@@ -21,11 +20,6 @@ const AuthService = {
     const response = await axios.post("/auth/authenticate", user);
     return response;
   },
-
-  // async getUser(user) {
-  //   const response = await axios.get("/auth/authenticate", user);
-  //   return response;
-  // },
 };
 
 export default AuthService;
